@@ -13,5 +13,6 @@ pub const UINT64 = c_ulonglong;
 pub const INT = c_int;
 pub const FLOAT = f32;
 pub const LONG = c_long;
+pub const DWORD = c_ulong;
 
 pub const LPCSTR = [*c]const u8;
