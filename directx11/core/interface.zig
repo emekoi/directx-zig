@@ -1,11 +1,22 @@
-pub const ID3D11Asynchronous = extern struct {
+//
+//  Copyright (c) 2019 emekoi
+//
+//  This library is free software; you can redistribute it and/or modify it
+//  under the terms of the MIT license. See LICENSE for details.
+//
+
+usingnamespace @import("enum.zig");
+usingnamespace @import("struct.zig");
+usingnamespace @import("../../types.zig");
+
+pub const IAsynchronous = extern struct {
     const Interface = @This();
     
     pub const VTable = extern struct {
         QueryInterface: extern fn (*Interface, *const GUID, *?*c_void) HRESULT,
         AddRef: extern fn (*Interface) ULONG,
         Release: extern fn (*Interface) ULONG,
-        GetDevice: extern fn (*Interface, **ID3D11Device) void,
+        GetDevice: extern fn (*Interface, **IDevice) void,
         GetPrivateData: extern fn (*Interface, *const GUID, *UINT, [*]BYTE) HRESULT,
         SetPrivateData: extern fn (*Interface, *const GUID, UINT, ?[*]const BYTE) HRESULT,
         SetPrivateDataInterface: extern fn (*Interface, *const GUID, *const IUnknown) HRESULT,
@@ -15,14 +26,14 @@ pub const ID3D11Asynchronous = extern struct {
     lpVtbl: *VTable,
 };
 
-pub const ID3D11BlendState = extern struct {
+pub const IBlendState = extern struct {
     const Interface = @This();
     
     pub const VTable = extern struct {
         QueryInterface: extern fn (*Interface, *const GUID, *?*c_void) HRESULT,
         AddRef: extern fn (*Interface) ULONG,
         Release: extern fn (*Interface) ULONG,
-        GetDevice: extern fn (*Interface, **ID3D11Device) void,
+        GetDevice: extern fn (*Interface, **IDevice) void,
         GetPrivateData: extern fn (*Interface, *const GUID, *UINT, [*]BYTE) HRESULT,
         SetPrivateData: extern fn (*Interface, *const GUID, UINT, ?[*]const BYTE) HRESULT,
         SetPrivateDataInterface: extern fn (*Interface, *const GUID, *const IUnknown) HRESULT,
@@ -32,14 +43,14 @@ pub const ID3D11BlendState = extern struct {
     lpVtbl: *VTable,
 };
 
-pub const ID3D11BlendState1 = extern struct {
+pub const IBlendState1 = extern struct {
     const Interface = @This();
     
     pub const VTable = extern struct {
         QueryInterface: extern fn (*Interface, *const GUID, *?*c_void) HRESULT,
         AddRef: extern fn (*Interface) ULONG,
         Release: extern fn (*Interface) ULONG,
-        GetDevice: extern fn (*Interface, **ID3D11Device) void,
+        GetDevice: extern fn (*Interface, **IDevice) void,
         GetPrivateData: extern fn (*Interface, *const GUID, *UINT, [*]BYTE) HRESULT,
         SetPrivateData: extern fn (*Interface, *const GUID, UINT, ?[*]const BYTE) HRESULT,
         SetPrivateDataInterface: extern fn (*Interface, *const GUID, *const IUnknown) HRESULT,
@@ -50,14 +61,14 @@ pub const ID3D11BlendState1 = extern struct {
     lpVtbl: *VTable,
 };
 
-pub const ID3D11DeviceChild = extern struct {
+pub const IDeviceChild = extern struct {
     const Interface = @This();
     
     pub const VTable = extern struct {
         QueryInterface: extern fn (*Interface, *const GUID, *?*c_void) HRESULT,
         AddRef: extern fn (*Interface) ULONG,
         Release: extern fn (*Interface) ULONG,
-        GetDevice: extern fn (*Interface, **ID3D11Device) void,
+        GetDevice: extern fn (*Interface, **IDevice) void,
         GetPrivateData: extern fn (*Interface, *const GUID, *UINT, [*]BYTE) HRESULT,
         SetPrivateData: extern fn (*Interface, *const GUID, UINT, ?[*]const BYTE) HRESULT,
         SetPrivateDataInterface: extern fn (*Interface, *const GUID, *const IUnknown) HRESULT,

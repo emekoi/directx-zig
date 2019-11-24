@@ -1,3 +1,10 @@
+//
+//  Copyright (c) 2019 emekoi
+//
+//  This library is free software; you can redistribute it and/or modify it
+//  under the terms of the MIT license. See LICENSE for details.
+//
+
 pub const AsynGetDataFlag = extern enum {
     DoNotFlush,
 };
